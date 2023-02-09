@@ -1,0 +1,33 @@
+.dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    position: relative;
+    height: 2.1rem;
+  }
+  
+  .dropdown__options {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 1;
+    flex-direction: column;
+    top:39px;
+    li{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 2.1rem;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+  }
+
+  .dropdown, .dropdown__options{
+    width:10.875rem;
+    border: 1px solid black;
+  }
+  
+  .dropdown:hover .dropdown__options {
+    display: flex;
+  }

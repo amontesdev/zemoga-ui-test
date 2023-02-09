@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setRulingsList } from "./actions";
+import "./App.scss";
+import Content from "./components/Content/Content";
+import Footer from "./components/Footer/Footer";
+import Hero from "./components/Hero/Hero";
+import Nav from "./components/Nav/Nav";
+import { State } from "./reducers";
 
-function App() {
+const App: React.FC = () => {
+  const dispatch = useDispatch();
+
+  const { rulingsList } = useSelector((state: State) => state);
+
+  useEffect(() => {
+    dispatch(setRulingsList(rulingsList));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <Hero />
+      <Content />
+      <hr role="separator" />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,38 @@
+.rulings-list-body{
+    display: flex;
+    overflow-x: auto;
+    gap: 0.75rem;
+    padding: 1.5rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .rulings-list-body{
+       display: grid;
+       grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    }
+    .listStyle{
+        display:flex;
+        flex-direction: column;
+        .ruling-card{
+            height: 171px;
+            min-height: 171px;
+            &__image{
+                object-fit: contain;
+                width: auto;
+            }
+            &__content{
+                &--description{
+                    margin-top: 1rem;
+                    flex-direction: row;
+                    .texts{
+                        padding-left:10rem ;
+                    }
+                }
+            }
+            &__progress{
+                height: 56px;
+            }
+        }
+
+    }
+}
